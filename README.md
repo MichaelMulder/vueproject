@@ -1,6 +1,6 @@
 # vueproject
 
-## Prerequesets
+## Preqeusites
 
 In order to view this project you'll need Node and npm.
 After installing you'll need to goto the comand line and use the following commands.
@@ -23,15 +23,15 @@ This command will install the npm packages required to view this project
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### For Development
 
-This command will start a development server on your local network
+This command will start a development server on your local network that also compiles the javascript into es5 with hot-module-reloading
 
 ```
 npm run serve
 ```
 
-### Compiles and minifies for production
+### For production
 
 ```
 npm run build
