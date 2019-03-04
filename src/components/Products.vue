@@ -10,7 +10,7 @@
                   <v-expand-transition>
                     <div
                       v-if="hover"
-                      class="d-flex transition-fast-in-fast-out orange darken-2 v-card--reveal display-3 white--text"
+                      class="d-flex transition-fast-in-fast-out info darken-2 v-card--reveal display-3 white--text"
                       style="height: 100%;"
                     >{{formatPrice(items.price)}}</div>
                   </v-expand-transition>
@@ -18,7 +18,7 @@
                 <v-card-text class="pt-4" style="position: relative;">
                   <v-btn
                     absolute
-                    color="orange"
+                    color="info"
                     class="white--text"
                     fab
                     large
