@@ -3,7 +3,7 @@
     <Header :cart="cart" :total="total"></Header>
     <v-spacer></v-spacer>
     <v-spacer></v-spacer>
-    <Products :cart="cart" :items="item" v-for="item in items" :key="item.id"></Products>
+    <Products :cart="cart" :items="item" v-for="item in store" :key="item.id"></Products>
   </v-app>
 </template>
 
@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       cart: [],
-      items: items
+      store: items
     };
   },
   components: {
@@ -29,6 +29,12 @@ export default {
       return this.cart
         .map(item => item.price) // find item prices
         .reduce((total, amount) => total + amount, 0); // add prices to total
+    },
+    findMatches(wordToMatch, items) {
+      return items.filter(item => {
+        const regex = new RegExp(wordToMatch, "gi");
+        return item.name.match(regex) || item.catogories.match(regex);
+      });
     }
   }
 };

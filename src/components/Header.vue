@@ -59,12 +59,6 @@ export default {
     return {};
   },
   methods: {
-    findMatches(wordToMatch, products) {
-      return items.filter(products => {
-        const regex = new RegExp(wordToMatch, "gi");
-        return products.name.match(regex) || place.catogories.match(regex);
-      });
-    },
     formatPrice(cents) {
       return (cents / 100).toLocaleString("en-US", {
         style: "currency",
