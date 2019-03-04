@@ -17,14 +17,14 @@
           <v-icon>mdi-cart</v-icon>
         </v-btn>
         <v-card>
-          <v-list v-for="(item, id) in cart" :key="id">
+          <v-list v-for="item in cart" :key="item.id">
             <v-list-tile>
               <v-list-tile-content>
                 <v-list-tile-title>{{item.name}}</v-list-tile-title>
                 <v-list-tile-sub-title>{{formatPrice(item.price)}}</v-list-tile-sub-title>
               </v-list-tile-content>
               <v-list-tile-action>
-                <v-icon @click="removeItem">mdi-cart-remove</v-icon>
+                <v-icon @click="removeItem(item)">mdi-cart-remove</v-icon>
               </v-list-tile-action>
             </v-list-tile>
           </v-list>
@@ -65,8 +65,8 @@ export default {
         currency: "USD"
       });
     },
-    removeItem() {
-      this.cart.splice(this.cart.id, 1);
+    removeItem(item) {
+      this.cart.splice(this.cart.indexOf(item), 1);
     }
   }
 };
