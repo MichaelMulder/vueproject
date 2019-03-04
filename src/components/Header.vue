@@ -9,7 +9,7 @@
       <v-flex xsm12 sm6 md3>
         <v-text-field label="Search" prepend-icon="mdi-magnify" single-line clearable small></v-text-field>
       </v-flex>
-      <v-menu open-on-hover transition="scale-transiton">
+      <v-menu open-on-hover transition="scale-transiton" :close-on-content-click="false">
         <v-btn round color="primary" slot="activator">
           <v-badge left color="red" v-show="cart.length > 0">
             <span slot="badge">{{cart.length}}</span>
@@ -36,7 +36,6 @@
           </v-list>
           <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn flat @click="menu = false">Cancel</v-btn>
             <v-btn color="primary" flat>Check Out</v-btn>
           </v-card-actions>
         </v-card>
