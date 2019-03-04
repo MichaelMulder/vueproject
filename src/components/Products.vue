@@ -29,7 +29,7 @@
                     <v-icon>mdi-cart</v-icon>
                   </v-btn>
                   <div class="font-weight-bold title mb-2">{{items.categories}}</div>
-                  <h3 class="display-1 font-weight-light orange--text mb-2">{{items.name}}</h3>
+                  <h3 class="display-1 font-weight-light info--text mb-2">{{items.name}}</h3>
                   <div class="font-weight-light title mb-2">{{items.desc}}</div>
                 </v-card-text>
               </v-card>
