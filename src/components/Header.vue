@@ -7,7 +7,15 @@
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-flex xsm12 sm6 md3>
-        <v-text-field label="Search" prepend-icon="mdi-magnify" single-line clearable small></v-text-field>
+        <v-text-field
+          label="Search"
+          prepend-icon="mdi-magnify"
+          single-line
+          clearable
+          small
+          :value="value"
+          @input="$emit('input', $event)"
+        ></v-text-field>
       </v-flex>
       <v-menu open-on-hover transition="scale-transiton" :close-on-content-click="false">
         <v-btn round color="primary" slot="activator">
@@ -48,11 +56,11 @@
 export default {
   name: "Header",
   props: {
-    cart: {
-      type: Array
-    },
-    total: {
-      type: Number
+    cart: Array,
+    total: Number,
+    value: {
+      default: "",
+      type: String
     }
   },
   data() {
