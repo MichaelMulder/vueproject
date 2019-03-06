@@ -37,7 +37,7 @@ const items = [
     desc: 'A cleaning robot',
     categories: 'Tech',
     image: './roomba.jpg',
-    id: 3,
+    id: 4,
   },
 ];
 
