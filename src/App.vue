@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <Header :cart="cart" :total="total"></Header>
+    <Header :cart="cart" :total="total" v-model="search"></Header>
     <v-spacer></v-spacer>
     <v-spacer></v-spacer>
-    <Products :cart="cart" :items="item" v-for="item in store" :key="item.id"></Products>
+    <v-spacer></v-spacer>
+    <Products :cart="cart" :items="item" v-for="item in filteredProducts" :key="item.id"></Products>
   </v-app>
 </template>
 
@@ -16,7 +17,8 @@ export default {
   data() {
     return {
       cart: [],
-      store: items
+      store: items,
+      search: ""
     };
   },
   components: {
@@ -30,10 +32,10 @@ export default {
         .map(item => item.price) // find item prices
         .reduce((total, amount) => total + amount, 0); // add prices to total
     },
-    findMatches(wordToMatch, items) {
-      return items.filter(item => {
-        const regex = new RegExp(wordToMatch, "gi");
-        return item.name.match(regex) || item.catogories.match(regex);
+    filteredProducts() {
+      return this.store.filter(item => {
+        const regex = new RegExp(this.search, "gi");
+        return item.name.match(regex) || item.categories.match(regex);
       });
     }
   }
