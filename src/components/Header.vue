@@ -2,8 +2,9 @@
   <header>
     <v-toolbar app dark>
       <v-toolbar-title class="headline text-uppercase">
-        <span>Buy</span>
-        <span class="font-weight-light">\Stuff</span>
+        <span class="font-weight-bold">
+          <v-icon>mdi-robot</v-icon>Roboto's Emporiem&trade;
+        </span>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-flex xsm12 sm6 md3>
